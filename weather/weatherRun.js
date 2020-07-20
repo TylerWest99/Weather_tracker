@@ -59,8 +59,13 @@ function main() {
         function printHumid() {
             console.log("Humidity: " + currentHumidity);
         }
-
-        printTemp();
+	function printTime(){
+	    console.log("On " + currentDay + " " + months[dateMonth - 1] + " " + dateDay + ", " + dateYear + " at " + currentTime +":");
+	}
+	printTime();
+	printTemp();
+	printFeels();
+	console.log("");
     });
 }// main running method
 
