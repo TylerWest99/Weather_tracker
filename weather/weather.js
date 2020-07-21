@@ -19,7 +19,7 @@ function main() {
         let currentWindSpeed = result[0].current.windspeed;
         let currentHumidity = result[0].current.humidity + '%';
         let currentTimeHour = Number(result[0].current.observationtime[0] + result[0].current.observationtime[1]);
-        let currentTimeMin = Number(result[0].current.observationtime[3] + result[0].current.observationtime[4]);
+        let currentTimeMin = Number(result[0].current.observationtime[3].toString() + result[0].current.observationtime[4].toString());
         let currentTime;
         //sets current time
         if (currentTimeHour > 12) {
