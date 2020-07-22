@@ -26,10 +26,10 @@ function main() {
             currentTime = (currentTimeHour - 12) + ":" + currentTimeMin + " PM";
         }
         else if (currentTimeHour == 12) {
-            currentTime = (currentTimeHour) + ":" + currentTimeMin + "PM";
+            currentTime = (currentTimeHour) + ":" + currentTimeMin + " PM";
         }
         else if (currentTimeHour == 0) {
-            currentTime = (currentTimeHour + 12) + ":" + currentTimeMin + "AM";
+            currentTime = (currentTimeHour + 12) + ":" + currentTimeMin + " AM";
         }
         else {
             currentTime = currentTimeHour + ":" + currentTimeMin + " AM";
@@ -42,6 +42,7 @@ function main() {
             console.log("Skies: " + currentSkies);
             console.log("Windspeed: " + currentWindSpeed);
             console.log("Humidity: " + currentHumidity);
+            console.log("");
         }//function to print useful info
 
         function printTemp() {
@@ -59,13 +60,22 @@ function main() {
         function printHumid() {
             console.log("Humidity: " + currentHumidity);
         }
-	function printTime(){
-	    console.log("On " + currentDay + " " + months[dateMonth - 1] + " " + dateDay + ", " + dateYear + " at " + currentTime +":");
-	}
-	printTime();
-	printTemp();
-	printFeels();
-	console.log("");
+        function printTime() {
+            console.log("At " + currentTime[0] + " " + currentTime[currentTime.length - 2] + currentTime[currentTime.length -1]);
+        }
+
+        try {
+            printTemp();
+            printFeels();
+            console.log("");
+        }
+        catch{
+            console.log("There was an error");
+            console.log("Likely an internet outage")
+            console.log("");
+        }
+
+        //printData();
     });
 }// main running method
 
